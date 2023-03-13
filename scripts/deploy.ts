@@ -8,25 +8,25 @@ async function main() {
     console.log('deploy from address: ', deployer.address);
 
 
-    const Floppy = await ethers.getContractFactory("Floppy");
-    const floppy = await Floppy.deploy();
-    console.log('Floppy address: ', floppy.address);
-    Config.setConfig(network + '.Floppy', floppy.address);
+    // const Floppy = await ethers.getContractFactory("Floppy");
+    // const floppy = await Floppy.deploy();
+    // console.log('Floppy address: ', floppy.address);
+    // Config.setConfig(network + '.Floppy', floppy.address);
 
-    const Vault = await ethers.getContractFactory("Vault");
-    const vault = await Vault.deploy();
-    console.log('Floppy address: ', vault.address);
-    Config.setConfig(network + '.Vault', vault.address);
+    // const Vault = await ethers.getContractFactory("Vault");
+    // const vault = await Vault.deploy();
+    // console.log('Floppy address: ', vault.address);
+    // Config.setConfig(network + '.Vault', vault.address);
     
     // const Floppy = await ethers.getContractFactory("USDT");
     // const floppy = await Floppy.deploy();
     // console.log('USDT address: ', floppy.address);
-    //Config.setConfig(network + '.USDT', floppy.address);
+    // Config.setConfig(network + '.USDT', floppy.address);
 
-    // const Ico = await ethers.getContractFactory("FLPCrowdSale");
-    // const ico = await Ico.deploy(1000,100,'0xdF8De3b50Be87dE8676c4731187c5DC5C00E70F3', '0xd54D6d5BD983a6cA18F8820f80E0A970FE4A9a8c');
-    // console.log('ICO address: ', ico.address);
-    // Config.setConfig(network + '.ico', ico.address);
+    const Ico = await ethers.getContractFactory("FLPCrowdSale");
+    const ico = await Ico.deploy(1000,100,'0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266', '0xf905409d2c1c62FCF085bA055d68468Cdbcdc5E1');
+    console.log('ICO address: ', ico.address);
+    Config.setConfig(network + '.ico', ico.address);
 
     
     // const Hero = await ethers.getContractFactory("Hero");
@@ -42,8 +42,8 @@ async function main() {
     // const Auction = await ethers.getContractFactory("Auction");
     // const auction = await Auction.deploy("0xd54D6d5BD983a6cA18F8820f80E0A970FE4A9a8c", "0x65f00a282A58B30f8376D41832d76CeCB7b6186C");
     // console.log('Market deployed at: ', auction.address);
-    
     // Config.setConfig(network + '.Auction', auction.address);
+    
 
     await Config.updateConfig();
     
